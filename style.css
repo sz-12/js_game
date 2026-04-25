@@ -67,7 +67,7 @@ body {
     opacity: 0.5;
 }
 
-/* Mid layer — medium trees, moves at 0.5x speed */
+
 .bg-mid {
     position: absolute;
     top: 0;
@@ -82,7 +82,7 @@ body {
     opacity: 0.7;
 }
 
-/* Near layer — foreground bushes, moves at full speed */
+
 .bg-near {
     position: absolute;
     top: 0;
@@ -96,7 +96,7 @@ body {
     background-size: auto 80px;
 }
 
-/* === LEVEL ANNOUNCEMENT === */
+
 #level-announce {
     position: absolute;
     top: 50%;
@@ -138,7 +138,7 @@ body {
     }
 }
 
-/* === START OVERLAY === */
+
 #startOverlay {
     position: absolute;
     inset: 0;
@@ -181,7 +181,7 @@ body {
     gap: 12px;
 }
 
-/* Enhancements for the instruction overlay and controls */
+
 #startOverlay .lead {
     font-size: 18px;
     max-width: 560px;
@@ -264,7 +264,7 @@ body {
     outline-offset: 3px;
 }
 
-/* === HUD === */
+
 .ui-top {
     position: absolute;
     top: 12px;
@@ -308,7 +308,7 @@ body {
     border: 2px solid rgba(255, 200, 0, 0.3);
 }
 
-/* === PLAYER === */
+
 #player {
     position: absolute;
     width: 50px;
@@ -325,7 +325,7 @@ body {
     transition: transform 0.1s;
 }
 
-/* === CARROT === */
+
 .carrot {
     position: absolute;
     width: 28px;
@@ -342,7 +342,7 @@ body {
     animation: bob 0.7s infinite alternate ease-in-out;
 }
 
-/* === ENEMIES === */
+
 .enemy {
     position: absolute;
     width: 52px;
@@ -366,7 +366,7 @@ body {
     background-color: #c8901a;
 }
 
-/* === HOME === */
+
 #home {
     position: absolute;
     width: 72px;
@@ -388,7 +388,7 @@ body {
     animation: pulse 0.8s infinite alternate;
 }
 
-/* === GAME OVER SCREEN === */
+
 .game-over-screen {
     position: absolute;
     inset: 0;
@@ -431,7 +431,7 @@ body {
     will-change: transform, filter, opacity;
 }
 
-/* If you switch to using an <img> inside #player, keep it crisp */
+
 #player img {
     width: 100%;
     height: 100%;

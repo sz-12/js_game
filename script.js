@@ -6,7 +6,7 @@ const startBtn = document.getElementById('startButton');
 const scoreEl  = document.getElementById('score');
 const livesEl  = document.getElementById('lives');
 
-// === BUILD PARALLAX LAYERS ===
+
 const bgSky  = createLayer('bg-sky');
 const bgFar  = createLayer('bg-far');
 const bgMid  = createLayer('bg-mid');
@@ -21,7 +21,7 @@ function createLayer(className) {
 
 let bgOffset = 0;
 
-// === BUILD HOME ===
+
 let home = document.getElementById('home');
 if (!home) {
     home = document.createElement('div');
@@ -30,13 +30,13 @@ if (!home) {
 }
 home.style.display = 'none'; 
 
-// === LEVEL BADGE IN HUD ===
+
 const uiTop = document.querySelector('.ui-top');
 const levelBadge = document.createElement('div');
 levelBadge.id = 'level-badge';
 if (uiTop) uiTop.appendChild(levelBadge);
 
-// === LEVEL COMPLETE SCREEN ===
+
 const levelScreen = document.createElement('div');
 levelScreen.id = 'level-screen';
 levelScreen.style.cssText = `
@@ -60,7 +60,7 @@ game.appendChild(levelScreen);
 
 const continueBtn = document.getElementById('continueBtn');
 
-// === LEVEL CONFIGURATIONS ===
+
 
 const LEVELS = [
     {
@@ -105,7 +105,7 @@ const LEVELS = [
     },
 ];
 
-// === WEB AUDIO API ===
+
 let audioCtx = null;
 
 function getAudioContext() {
@@ -184,11 +184,11 @@ let carrotInterval = null;
 let enemyInterval  = null;
 let animationId    = null;
 
-// === HELPERS ===
+
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function cfg() { return LEVELS[currentLevel]; }
 
-// === RESET FOR EACH LEVEL ===
+
 function resetForLevel() {
     playerX  = 80;
     playerY  = 60;
@@ -212,7 +212,7 @@ function resetForLevel() {
     updateUI();
 }
 
-// === START GAME (welcome screen → level 1) ===
+
 function startGame() {
     currentLevel = 0;
     lives = 3;
@@ -221,7 +221,7 @@ function startGame() {
     beginLevel();
 }
 
-// === BEGIN LEVEL ===
+
 function beginLevel() {
     resetForLevel();
     running = true;
@@ -236,7 +236,7 @@ function beginLevel() {
     animationId = requestAnimationFrame(loop);
 }
 
-// === LEVEL COMPLETE ===
+
 function completeLevel() {
     running = false;
     clearInterval(carrotInterval); carrotInterval = null;
@@ -257,7 +257,7 @@ function completeLevel() {
     levelScreen.style.display = 'flex';
 }
 
-// === GAME OVER ===
+
 function gameOver() {
     running = false;
     clearInterval(carrotInterval); carrotInterval = null;
@@ -272,7 +272,7 @@ function gameOver() {
     overlay.style.display = 'flex';
 }
 
-// === CONTINUE BUTTON ===
+
 continueBtn.addEventListener('click', () => {
     levelScreen.style.display = 'none';
     const isLast = currentLevel === LEVELS.length - 1;
@@ -288,7 +288,7 @@ continueBtn.addEventListener('click', () => {
     }
 });
 
-// === SPAWN CARROT ===
+
 function spawnCarrot() {
     if (!running) return;
     const c = document.createElement('div');
@@ -308,7 +308,6 @@ function spawnCarrot() {
             carrots++;
             soundCollect();
             updateUI();
-            // Reveal home when goal reached
             if (carrots >= cfg().carrots) {
                 home.style.display = 'block';
                 home.classList.add('unlocked');
@@ -362,7 +361,6 @@ function spawnEnemy() {
 function loop() {
     if (!running) return;
 
-    // Parallax
     bgOffset += 2;
     bgFar.style.backgroundPositionX  = -(bgOffset * 0.2) + 'px';
     bgMid.style.backgroundPositionX  = -(bgOffset * 0.5) + 'px';
