@@ -4,7 +4,7 @@ link preview https://sz-12.github.io/js_game/
 
 # Survival Bunny Game 🐰🥕
 
-A polished, web-based 2D survival platformer built entirely with HTML, CSS, and Vanilla JavaScript. 
+A polished, web-based 2D survival platformer built entirely with HTML, CSS, and JavaScript. 
 
 ## 🎮 Gameplay
 Guide Pip the Bunny safely through a dangerous forest! 
