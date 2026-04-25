@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Bunny Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game_wrapper">
+        <div id="player"></div>  
+        <div class="instructions" id="startOverlay">
+            <h1>Survival Bunny Game</h1>
+            <p class="lead">Use the arrow keys to move. Press Space to jump. Collect carrots and reach home safely!</p>
+
+            <div class="controls" aria-hidden="false">
+                <div class="control">
+                    <div class="key">← &nbsp; →</div>
+                    <div class="label">Move</div>
+                    <div class="key">Space</div>
+                    <div class="label">Jump</div>
+                </div>
+            </div>
+
+            <button id="startButton" class="start-btn" type="button">Start Game</button>
+            <div class="start-hint">Tip: Press <strong>Space</strong> or <strong>Enter</strong> to start — on mobile tap the screen</div>
+        </div>
+
+        <div class="ui-top">
+            <div id="score">Score: 0</div>
+            <div id="level-badge">Level 1</div>
+            <div id="lives">Lives: 3</div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html
